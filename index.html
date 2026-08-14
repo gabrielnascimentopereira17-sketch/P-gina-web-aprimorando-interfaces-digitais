@@ -231,3 +231,359 @@
                 <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Templo grego sob o céu estrelado">
                 <p class="caption">A arquitetura e os mitos gregos e romanos moldam o legado dos semideuses.</p>
             </div>
+            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Meio-Sangue: Livros, Filmes e Séries</title>
+    <style>
+        /* Variáveis de Cores - Tema Claro */
+        :root {
+            --bg-color: #eef2f5;
+            --container-bg: rgba(255, 255, 255, 0.98);
+            --text-color: #2b2d42;
+            --header-color: #0d3b66;
+            --accent-color: #e63946;
+            --secondary-color: #1d3557;
+            --highlight-color: #457b9d;
+            --card-bg: #f8f9fa;
+            --border-color: #d8e2dc;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        /* Variáveis de Cores - Tema Escuro */
+        body.dark-mode {
+            --bg-color: #0b132b;
+            --container-bg: rgba(28, 37, 65, 0.95);
+            --text-color: #e0e1dd;
+            --header-color: #3a86ff;
+            --accent-color: #ff006e;
+            --secondary-color: #3a86ff;
+            --highlight-color: #00b4d8;
+            --card-bg: #1c2541;
+            --border-color: #3a506b;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Barra Superior (Modo Escuro / Claro) */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            background-color: var(--highlight-color);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .theme-btn {
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .theme-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Cabeçalho */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--highlight-color);
+            padding-bottom: 25px;
+        }
+
+        header h1 {
+            color: var(--header-color);
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-style: italic;
+            opacity: 0.85;
+            font-size: 1.1rem;
+        }
+
+        /* Seções */
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--highlight-color);
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+            border-left: 5px solid var(--highlight-color);
+            padding-left: 12px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        /* Imagens */
+        .img-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .img-container img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .img-container img:hover {
+            transform: scale(1.02);
+        }
+
+        .caption {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Listas */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Cards Explicativos */
+        .info-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-card h3 {
+            color: var(--highlight-color);
+            margin-bottom: 10px;
+        }
+
+        /* Seção do Botão de Interação */
+        .interactive-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .like-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .like-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .like-btn.liked {
+            background-color: #2a9d8f;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-bar">
+            <span class="badge">Portal Mitológico</span>
+            <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
+                <span id="themeIcon">🌙</span> <span id="themeText">Modo Escuro</span>
+            </button>
+        </div>
+
+        <header>
+            <h1>Percy Jackson e os Meio-Sangues</h1>
+            <p>Tudo sobre o acampamento, os heróis da mitologia e as adaptações para o cinema e TV</p>
+        </header>
+
+        <section>
+            <h2>O Universo dos Semideuses</h2>
+            <p>Um <strong>Meio-Sangue</strong> é o filho de um deus grego ou romano com um mortal. No universo criado pelo autor Rick Riordan, esses jovens possuem habilidades extraordinárias, mas também enfrentam constantes perigos, já que monstros mitológicos conseguem farejar sua presença divina no mundo moderno.</p>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80" alt="Espada de Semideus">
+                <p class="caption">Espadas de bronze celestial e relíquias mágica são as principais defesas dos meio-sangues.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>O Filmes e Adaptações</h2>
+            <p>O universo Meio-Sangue ganhou vida nas telas em diferentes adaptações ao longo dos anos:</p>
+
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80" alt="Templo grego sob o céu">
+                <p class="caption">A jornada dos filmes leva os heróis do Acampamento Meio-Sangue ao Monte Olimpo.</p>
+            </div>
+
+            <ul>
+                <li><strong>Percy Jackson e o Ladrão de Raios (2010):</strong> O primeiro filme apresentou Percy descobrindo ser filho de Poseidon e sendo acusado de roubar o Raio Mestre de Zeus.</li>
+                <li><strong>Percy Jackson e o Mar de Monstros (2013):</strong> A sequência mostra a busca pelo Templo do Velo de Ouro no perigoso Triângulo das Bermudas.</li>
+                <li><strong>Série Original Disney+ (2023-Presente):</strong> Uma adaptação mais fiel aos livros, trazendo uma nova geração de atores e efeitos visuais modernos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Os Chales do Acampamento Meio-Sangue</h2>
+            <p>No acampamento, os semideuses são divididos em chalés conforme o seu pai ou mãe divino:</p>
+
+            <div class="info-card">
+                <h3>🌊 Chalé 3 - Poseidon</h3>
+                <p>Pertencente aos filhos do deus dos mares. Os membros possuem controle sobre a água, habilidade de curar ferimentos em contato com ela e comunicação com criaturas marinhas.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>⚡ Chalé 1 - Zeus</h3>
+                <p>Destinado aos filhos do rei dos deuses. Eles têm capacidade de manipular raios, controlar o ar e gerar rajadas elétricas.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🦉 Chalé 6 - Atena</h3>
+                <p>Filhos da deusa da sabedoria. Destacam-se pelo alto raciocínio estratégico, conhecimento de combate e inteligência apurada.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Como Funciona o Botão de Curtir?</h2>
+            <p>Abaixo você encontra um botão interativo criado com <strong>JavaScript</strong>. Veja como ele funciona:</p>
+            <ul>
+                <li><strong>Clique para curtir:</strong> Ao clicar no botão, o contador soma +1 e o botão muda para verde.</li>
+                <li><strong>Clique para descurtir:</strong> Se clicar novamente, o contador subtrai -1 e o botão volta ao estado original.</li>
+            </ul>
+        </section>
+
+        <div class="interactive-section">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 12px;">Gostou do conteúdo sobre os Meio-Sangues?</p>
+            <button class="like-btn" id="likeBtn" onclick="toggleLike()">
+                <span id="heartIcon">❤️</span> Curtir (<span id="likeCount">0</span>)
+            </button>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 - Guia Completo do Acampamento Meio-Sangue</p>
+        </footer>
+    </div>
+
+    <script>
+        // Lógica do Botão de Curtir
+        let likes = 0;
+        let isLiked = false;
+
+        function toggleLike() {
+            const btn = document.getElementById('likeBtn');
+            const countDisplay = document.getElementById('likeCount');
+
+            if (!isLiked) {
+                likes++;
+                isLiked = true;
+                btn.classList.add('liked');
+            } else {
+                likes--;
+                isLiked = false;
+                btn.classList.remove('liked');
+            }
+
+            countDisplay.textContent = likes;
+        }
+
+        // Lógica do Modo Escuro / Claro
+        function toggleTheme() {
+            const body = document.body;
+            const themeBtn = document.getElementById('themeBtn');
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Modo Claro';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Modo Escuro';
+            }
+        }
+    </script>
+</body>
+</html>
